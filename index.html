@@ -1,17 +1,19 @@
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ã‡ok Dilli Footer - Butonlu Dil SeÃ§ici</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çok Dilli Footer - Butonlu Dil Seçici</title>
 
     <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ---------- TEMA DEÄÄ°ÅKENLERÄ° ---------- */
+        /* ---------- TEMA DEĞİŞKENLERİ ---------- */
         :root {
             --bg-primary: #f4f7fc;
             --bg-secondary: #ffffff;
@@ -63,14 +65,17 @@
             display: flex;
             flex-direction: column;
             padding-bottom: 0;
-            transition: background var(--transition-speed) ease, color var(--transition-speed) ease, padding-bottom 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+            transition:
+                background var(--transition-speed) ease,
+                color var(--transition-speed) ease,
+                padding-bottom 0.6s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         body.footer-open {
             padding-bottom: 360px;
         }
 
-        /* OKUMA Ã‡UBUÄU */
+        /* OKUMA ÇUBUĞU */
         #progressBar {
             position: fixed;
             top: 0;
@@ -83,7 +88,7 @@
             box-shadow: 0 0 12px var(--accent);
         }
 
-        /* ANA Ä°Ã‡ERÄ°K */
+        /* ANA İÇERİK */
         .main-content {
             flex: 1;
             max-width: 1200px;
@@ -95,7 +100,11 @@
         .hero {
             text-align: center;
             padding: 60px 20px 40px;
-            background: linear-gradient(145deg, var(--hero-start), var(--hero-end));
+            background: linear-gradient(
+                145deg,
+                var(--hero-start),
+                var(--hero-end)
+            );
             border-radius: 40px;
             margin-bottom: 48px;
             box-shadow: 0 12px 40px var(--shadow-color);
@@ -103,14 +112,17 @@
             position: relative;
             overflow: hidden;
         }
+
         .hero h1 {
             font-size: 2.8rem;
             font-weight: 700;
             color: var(--text-primary);
         }
+
         .hero h1 span {
             color: var(--accent);
         }
+
         .hero p {
             font-size: 1.15rem;
             color: var(--text-secondary);
@@ -127,13 +139,17 @@
             gap: 12px;
             color: var(--text-primary);
         }
+
         .section-title i {
             color: var(--accent);
         }
 
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            grid-template-columns: repeat(
+                auto-fill,
+                minmax(260px, 1fr)
+            );
             gap: 28px;
         }
 
@@ -143,37 +159,44 @@
             padding: 28px 24px 32px;
             box-shadow: 0 6px 20px var(--shadow-color);
             border: 1px solid var(--border-color);
-            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+            transition:
+                transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
                 box-shadow 0.4s ease,
                 background 0.3s ease;
             display: flex;
             flex-direction: column;
         }
+
         .card:hover {
             transform: translateY(-12px) scale(1.01);
             box-shadow: 0 24px 48px var(--shadow-hover);
         }
+
         .card .icon {
             font-size: 2.6rem;
             color: var(--accent);
             margin-bottom: 14px;
             transition: transform 0.5s ease;
         }
+
         .card:hover .icon {
             transform: rotate(8deg) scale(1.15);
         }
+
         .card h3 {
             font-size: 1.15rem;
             font-weight: 600;
             margin-bottom: 8px;
             color: var(--text-primary);
         }
+
         .card p {
             font-size: 0.92rem;
             color: var(--text-secondary);
             line-height: 1.7;
             flex: 1;
         }
+
         .card .tag {
             display: inline-block;
             margin-top: 16px;
@@ -187,6 +210,7 @@
             align-self: flex-start;
             transition: all 0.3s ease;
         }
+
         .card:hover .tag {
             background: var(--accent);
             color: #fff;
@@ -205,11 +229,13 @@
             border-top: 1px solid var(--glass-border);
             box-shadow: 0 -12px 50px var(--shadow-color);
             transform: translateY(calc(100% - 68px));
-            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+            transition:
+                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
                 background 0.4s ease,
                 box-shadow 0.4s ease;
             border-radius: 32px 32px 0 0;
         }
+
         .footer-taskbar.open {
             transform: translateY(0);
             box-shadow: 0 -16px 60px var(--shadow-color);
@@ -232,9 +258,11 @@
             border-bottom: 1.5px solid transparent;
             margin: -6px -12px 0;
         }
+
         .taskbar-toggle:hover {
             background: var(--border-color);
         }
+
         .taskbar-toggle .left {
             display: flex;
             align-items: center;
@@ -242,10 +270,12 @@
             font-weight: 500;
             color: var(--text-primary);
         }
+
         .taskbar-toggle .left i {
             font-size: 1.3rem;
             color: var(--accent);
         }
+
         .taskbar-toggle .left .badge {
             background: var(--badge-bg);
             color: #fff;
@@ -253,11 +283,13 @@
             padding: 3px 12px;
             border-radius: 40px;
         }
+
         .taskbar-toggle .toggle-icon {
             font-size: 1.2rem;
             color: var(--text-muted);
             transition: transform 0.6s ease;
         }
+
         .footer-taskbar.open .taskbar-toggle .toggle-icon {
             transform: rotate(180deg);
         }
@@ -271,9 +303,13 @@
             visibility: hidden;
             max-height: 0;
             overflow: hidden;
-            transition: opacity 0.5s ease, max-height 0.6s ease, padding 0.4s ease;
+            transition:
+                opacity 0.5s ease,
+                max-height 0.6s ease,
+                padding 0.4s ease;
             padding-bottom: 0;
         }
+
         .footer-taskbar.open .taskbar-body {
             opacity: 1;
             visibility: visible;
@@ -286,6 +322,7 @@
             flex-direction: column;
             gap: 14px;
         }
+
         .taskbar-col .col-title {
             font-size: 0.8rem;
             font-weight: 600;
@@ -295,6 +332,7 @@
             align-items: center;
             gap: 8px;
         }
+
         .taskbar-col .col-title i {
             color: var(--accent);
         }
@@ -305,6 +343,7 @@
             gap: 14px;
             flex-wrap: wrap;
         }
+
         .social-icons a {
             display: inline-flex;
             align-items: center;
@@ -315,9 +354,11 @@
             background: var(--border-color);
             color: var(--text-primary);
             font-size: 1.3rem;
-            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition:
+                all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
             text-decoration: none;
         }
+
         .social-icons a:hover {
             transform: translateY(-6px) scale(1.12);
             background: var(--accent);
@@ -337,10 +378,12 @@
             transition: all 0.3s ease;
             outline: none;
         }
+
         .search-wrapper input:focus {
             border-color: var(--accent);
             box-shadow: 0 0 0 6px var(--shadow-hover);
         }
+
         .search-wrapper i {
             position: absolute;
             left: 20px;
@@ -348,12 +391,14 @@
             transform: translateY(-50%);
             color: var(--text-muted);
         }
+
         .search-filters {
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
             margin-top: 2px;
         }
+
         .search-filters button {
             padding: 6px 18px;
             border-radius: 40px;
@@ -365,24 +410,27 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
+
         .search-filters button.active {
             background: var(--accent);
             color: #fff;
             border-color: var(--accent);
             box-shadow: 0 6px 16px var(--shadow-hover);
         }
+
         .search-filters button:hover:not(.active) {
             border-color: var(--accent);
             color: var(--accent);
         }
 
-        /* DÄ°L BUTONLARI (filtre butonlarÄ±yla aynÄ± stil) */
+        /* DİL BUTONLARI */
         .lang-buttons {
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
             margin-top: 2px;
         }
+
         .lang-buttons button {
             padding: 6px 14px;
             border-radius: 40px;
@@ -398,26 +446,30 @@
             gap: 6px;
             font-family: 'Poppins', sans-serif;
         }
+
         .lang-buttons button .flag {
             font-size: 1.1rem;
         }
+
         .lang-buttons button.active {
             background: var(--accent);
             color: #fff;
             border-color: var(--accent);
             box-shadow: 0 6px 16px var(--shadow-hover);
         }
+
         .lang-buttons button:hover:not(.active) {
             border-color: var(--accent);
             color: var(--accent);
         }
 
-        /* HABER BÃœLTENÄ° */
+        /* HABER BÜLTENİ */
         .newsletter-form {
             display: flex;
             gap: 8px;
             width: 100%;
         }
+
         .newsletter-form input {
             flex: 1;
             padding: 12px 16px;
@@ -429,25 +481,33 @@
             transition: all 0.3s ease;
             min-width: 0;
         }
+
         .newsletter-form input:focus {
             border-color: var(--accent);
             box-shadow: 0 0 0 5px var(--shadow-hover);
         }
+
         .newsletter-form button {
             padding: 12px 24px;
             border: none;
             border-radius: 60px;
-            background: linear-gradient(145deg, var(--accent), var(--accent-hover));
+            background: linear-gradient(
+                145deg,
+                var(--accent),
+                var(--accent-hover)
+            );
             color: #fff;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition:
+                all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
             display: flex;
             align-items: center;
             gap: 8px;
             box-shadow: 0 4px 12px var(--shadow-hover);
             white-space: nowrap;
         }
+
         .newsletter-form button:hover {
             transform: translateY(-3px) scale(1.03);
             box-shadow: 0 12px 32px var(--shadow-hover);
@@ -469,6 +529,7 @@
             transition: all 0.3s ease;
             width: fit-content;
         }
+
         .theme-toggle-btn:hover {
             background: var(--accent);
             color: #fff;
@@ -486,6 +547,7 @@
             gap: 12px;
             max-width: 360px;
         }
+
         .toast {
             background: var(--bg-secondary);
             color: var(--text-primary);
@@ -498,17 +560,22 @@
             gap: 14px;
             transform: translateX(120%);
             opacity: 0;
-            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
+            transition:
+                transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                opacity 0.5s ease;
             border: 1px solid var(--border-color);
         }
+
         .toast.show {
             transform: translateX(0);
             opacity: 1;
         }
+
         .toast i {
             font-size: 1.6rem;
             color: var(--accent);
         }
+
         .toast .toast-close {
             margin-left: auto;
             cursor: pointer;
@@ -518,6 +585,7 @@
             border: none;
             font-size: 1.2rem;
         }
+
         .toast .toast-close:hover {
             color: var(--text-primary);
         }
@@ -527,561 +595,1809 @@
             .taskbar-body {
                 grid-template-columns: 1fr 1fr;
             }
+
             body.footer-open {
                 padding-bottom: 500px;
             }
         }
+
         @media (max-width: 600px) {
             .taskbar-body {
                 grid-template-columns: 1fr;
             }
+
             body.footer-open {
                 padding-bottom: 580px;
             }
+
             .hero h1 {
                 font-size: 1.8rem;
             }
+
             .toast-container {
                 max-width: 90%;
                 right: 5%;
             }
+
             .newsletter-form {
                 flex-wrap: wrap;
             }
+
             .newsletter-form button {
                 width: 100%;
                 justify-content: center;
             }
+
             .lang-buttons button {
                 font-size: 0.7rem;
                 padding: 4px 10px;
             }
         }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-    <!-- OKUMA Ã‡UBUÄU -->
+    <!-- OKUMA ÇUBUĞU -->
     <div id="progressBar"></div>
 
     <!-- TOAST -->
     <div class="toast-container" id="toastContainer"></div>
 
-    <!-- ========== ANA Ä°Ã‡ERÄ°K ========== -->
+    <!-- ========== ANA İÇERİK ========== -->
     <main class="main-content">
+
         <section class="hero">
-            <h1><span data-i18n="heroTitle">Merhaba, DÃ¼nya</span> ğŸ‘‹</h1>
-            <p data-i18n="heroDesc">Footer'da dil seÃ§eneÄŸi ve geliÅŸmiÅŸ abone formu aktif!</p>
+            <h1>
+                <span data-i18n="heroTitle">Merhaba, Dünya</span> 👋
+            </h1>
+
+            <p data-i18n="heroDesc">
+                Footer'da dil seçeneği ve gelişmiş abone formu aktif!
+            </p>
         </section>
 
         <div class="section-title">
             <i class="fas fa-grid-2"></i>
-            <span data-i18n="contentTitle">Ä°Ã§erikler</span>
-            <span style="font-size:0.8rem; font-weight:400; color:var(--text-muted); margin-left:auto;" id="cardCount">4 Ã¶ÄŸe</span>
+
+            <span data-i18n="contentTitle">
+                İçerikler
+            </span>
+
+            <span
+                style="
+                    font-size:0.8rem;
+                    font-weight:400;
+                    color:var(--text-muted);
+                    margin-left:auto;
+                "
+                id="cardCount"
+            >
+                4 içerik
+            </span>
         </div>
 
         <div class="card-grid" id="cardGrid">
+
             <!-- Kart 1 -->
-            <div class="card" data-tag="teknoloji">
-                <div class="icon"><i class="fas fa-laptop-code"></i></div>
-                <h3 data-i18n="card1Title">Yapay Zeka ile TasarÄ±m</h3>
-                <p data-i18n="card1Desc">Yeni nesil yapay zeka araÃ§larÄ±yla dijital Ã¼rÃ¼n tasarÄ±mÄ± nasÄ±l deÄŸiÅŸiyor?</p>
-                <span class="tag" data-i18n="card1Tag">Teknoloji</span>
+            <div class="card" data-tag="technology">
+                <div class="icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+
+                <h3 data-i18n="card1Title">
+                    Yapay Zeka ile Tasarım
+                </h3>
+
+                <p data-i18n="card1Desc">
+                    Yeni nesil yapay zeka araçlarıyla dijital ürün tasarımı
+                    nasıl değişiyor?
+                </p>
+
+                <span class="tag" data-i18n="card1Tag">
+                    Teknoloji
+                </span>
             </div>
+
             <!-- Kart 2 -->
-            <div class="card" data-tag="saÄŸlÄ±k">
-                <div class="icon"><i class="fas fa-heart-pulse"></i></div>
-                <h3 data-i18n="card2Title">SaÄŸlÄ±klÄ± YaÅŸam Trendleri</h3>
-                <p data-i18n="card2Desc">2026'da Ã¶ne Ã§Ä±kan saÄŸlÄ±k ve wellness trendlerini keÅŸfedin.</p>
-                <span class="tag" data-i18n="card2Tag">SaÄŸlÄ±k</span>
+            <div class="card" data-tag="health">
+                <div class="icon">
+                    <i class="fas fa-heart-pulse"></i>
+                </div>
+
+                <h3 data-i18n="card2Title">
+                    Sağlıklı Yaşam Trendleri
+                </h3>
+
+                <p data-i18n="card2Desc">
+                    2026'da öne çıkan sağlık ve wellness trendlerini keşfedin.
+                </p>
+
+                <span class="tag" data-i18n="card2Tag">
+                    Sağlık
+                </span>
             </div>
+
             <!-- Kart 3 -->
-            <div class="card" data-tag="eÄŸitim">
-                <div class="icon"><i class="fas fa-graduation-cap"></i></div>
-                <h3 data-i18n="card3Title">Dijital EÄŸitim DÃ¶nÃ¼ÅŸÃ¼mÃ¼</h3>
-                <p data-i18n="card3Desc">Uzaktan eÄŸitim ve interaktif Ã¶ÄŸrenme platformlarÄ±nÄ±n geleceÄŸi.</p>
-                <span class="tag" data-i18n="card3Tag">EÄŸitim</span>
+            <div class="card" data-tag="education">
+                <div class="icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+
+                <h3 data-i18n="card3Title">
+                    Dijital Eğitim Dönüşümü
+                </h3>
+
+                <p data-i18n="card3Desc">
+                    Uzaktan eğitim ve interaktif öğrenme platformlarının
+                    geleceği.
+                </p>
+
+                <span class="tag" data-i18n="card3Tag">
+                    Eğitim
+                </span>
             </div>
+
             <!-- Kart 4 -->
-            <div class="card" data-tag="teknoloji">
-                <div class="icon"><i class="fas fa-microchip"></i></div>
-                <h3 data-i18n="card4Title">Kuantum Bilgisayarlar</h3>
-                <p data-i18n="card4Desc">Kuantum iÅŸlemciler ve gÃ¼nlÃ¼k hayata etkileri Ã¼zerine bir bakÄ±ÅŸ.</p>
-                <span class="tag" data-i18n="card4Tag">Teknoloji</span>
+            <div class="card" data-tag="technology">
+                <div class="icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+
+                <h3 data-i18n="card4Title">
+                    Kuantum Bilgisayarlar
+                </h3>
+
+                <p data-i18n="card4Desc">
+                    Kuantum işlemciler ve günlük hayata etkileri üzerine
+                    bir bakış.
+                </p>
+
+                <span class="tag" data-i18n="card4Tag">
+                    Teknoloji
+                </span>
             </div>
+
         </div>
     </main>
 
     <!-- ========== FOOTER ========== -->
-    <footer class="footer-taskbar" id="footerTaskbar">
+    <footer
+        class="footer-taskbar"
+        id="footerTaskbar"
+    >
         <div class="taskbar-inner">
-            <div class="taskbar-toggle" id="toggleBtn">
+
+            <div
+                class="taskbar-toggle"
+                id="toggleBtn"
+                role="button"
+                tabindex="0"
+                aria-expanded="false"
+                aria-controls="footerBody"
+            >
                 <div class="left">
+
                     <i class="fas fa-bars"></i>
-                    <span data-i18n="taskbarTitle">GÃ¶rev Ã‡ubuÄŸu</span>
-                    <span class="badge" data-i18n="taskbarBadge">Ã‡ok Dilli</span>
+
+                    <span data-i18n="taskbarTitle">
+                        Görev Çubuğu
+                    </span>
+
+                    <span
+                        class="badge"
+                        data-i18n="taskbarBadge"
+                    >
+                        Çok Dilli
+                    </span>
+
                 </div>
-                <div class="toggle-icon"><i class="fas fa-chevron-up"></i></div>
+
+                <div class="toggle-icon">
+                    <i class="fas fa-chevron-up"></i>
+                </div>
             </div>
 
-            <div class="taskbar-body">
-                <!-- 1. SOSYAL + TEMA + DÄ°L -->
+            <div
+                class="taskbar-body"
+                id="footerBody"
+            >
+
+                <!-- 1. SOSYAL + TEMA + DİL -->
                 <div class="taskbar-col">
-                    <div class="col-title"><i class="fas fa-share-nodes"></i><span data-i18n="socialTitle">Sosyal</span></div>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-discord"></i></a>
+
+                    <div class="col-title">
+                        <i class="fas fa-share-nodes"></i>
+
+                        <span data-i18n="socialTitle">
+                            Sosyal
+                        </span>
                     </div>
 
-                    <!-- TEMA BUTONU -->
-                    <button class="theme-toggle-btn" id="themeToggle">
-                        <i class="fas fa-moon" id="themeIcon"></i>
-                        <span id="themeText" data-i18n="themeDark">KaranlÄ±k</span>
+                    <div class="social-icons">
+
+                        <a
+                            href="#"
+                            aria-label="Twitter"
+                        >
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+                        <a
+                            href="#"
+                            aria-label="Instagram"
+                        >
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a
+                            href="#"
+                            aria-label="LinkedIn"
+                        >
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <a
+                            href="#"
+                            aria-label="YouTube"
+                        >
+                            <i class="fab fa-youtube"></i>
+                        </a>
+
+                        <a
+                            href="#"
+                            aria-label="Discord"
+                        >
+                            <i class="fab fa-discord"></i>
+                        </a>
+
+                    </div>
+
+                    <!-- TEMA -->
+                    <button
+                        class="theme-toggle-btn"
+                        id="themeToggle"
+                        type="button"
+                    >
+                        <i
+                            class="fas fa-moon"
+                            id="themeIcon"
+                        ></i>
+
+                        <span
+                            id="themeText"
+                            data-i18n="themeDark"
+                        >
+                            Karanlık
+                        </span>
                     </button>
 
-                    <!-- DÄ°L BUTONLARI (Filtre stili) -->
-                    <div class="lang-buttons" id="langButtons">
-                        <button class="lang-option active" data-lang="tr">
-                            <span class="flag">ğŸ‡¹ğŸ‡·</span> TR
+                    <!-- DİL BUTONLARI -->
+                    <div
+                        class="lang-buttons"
+                        id="langButtons"
+                    >
+
+                        <button
+                            class="lang-option active"
+                            data-lang="tr"
+                            type="button"
+                        >
+                            <span class="flag">🇹🇷</span>
+                            TR
                         </button>
-                        <button class="lang-option" data-lang="en">
-                            <span class="flag">ğŸ‡¬ğŸ‡§</span> EN
+
+                        <button
+                            class="lang-option"
+                            data-lang="en"
+                            type="button"
+                        >
+                            <span class="flag">🇬🇧</span>
+                            EN
                         </button>
-                        <button class="lang-option" data-lang="de">
-                            <span class="flag">ğŸ‡©ğŸ‡ª</span> DE
+
+                        <button
+                            class="lang-option"
+                            data-lang="de"
+                            type="button"
+                        >
+                            <span class="flag">🇩🇪</span>
+                            DE
                         </button>
-                        <button class="lang-option" data-lang="fr">
-                            <span class="flag">ğŸ‡«ğŸ‡·</span> FR
+
+                        <button
+                            class="lang-option"
+                            data-lang="fr"
+                            type="button"
+                        >
+                            <span class="flag">🇫🇷</span>
+                            FR
                         </button>
+
                     </div>
+
                 </div>
 
                 <!-- 2. ARAMA -->
                 <div class="taskbar-col">
-                    <div class="col-title"><i class="fas fa-magnifying-glass"></i><span data-i18n="searchTitle">Ara ve Filtrele</span></div>
-                    <div class="search-wrapper" style="position:relative;">
+
+                    <div class="col-title">
+                        <i class="fas fa-magnifying-glass"></i>
+
+                        <span data-i18n="searchTitle">
+                            Ara ve Filtrele
+                        </span>
+                    </div>
+
+                    <div
+                        class="search-wrapper"
+                        style="position:relative;"
+                    >
+
                         <i class="fas fa-search"></i>
-                        <input type="text" id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="Kartlarda ara..." />
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            data-i18n-placeholder="searchPlaceholder"
+                            placeholder="Kartlarda ara..."
+                            autocomplete="off"
+                        >
+
                     </div>
-                    <div class="search-filters" id="filterButtons">
-                        <button class="active" data-filter="all" data-i18n="filterAll">TÃ¼mÃ¼</button>
-                        <button data-filter="teknoloji" data-i18n="filterTech">Teknoloji</button>
-                        <button data-filter="saÄŸlÄ±k" data-i18n="filterHealth">SaÄŸlÄ±k</button>
-                        <button data-filter="eÄŸitim" data-i18n="filterEdu">EÄŸitim</button>
+
+                    <div
+                        class="search-filters"
+                        id="filterButtons"
+                    >
+
+                        <button
+                            class="active"
+                            data-filter="all"
+                            data-i18n="filterAll"
+                            type="button"
+                        >
+                            Tümü
+                        </button>
+
+                        <button
+                            data-filter="technology"
+                            data-i18n="filterTech"
+                            type="button"
+                        >
+                            Teknoloji
+                        </button>
+
+                        <button
+                            data-filter="health"
+                            data-i18n="filterHealth"
+                            type="button"
+                        >
+                            Sağlık
+                        </button>
+
+                        <button
+                            data-filter="education"
+                            data-i18n="filterEdu"
+                            type="button"
+                        >
+                            Eğitim
+                        </button>
+
                     </div>
+
                 </div>
 
-                <!-- 3. HABER BÃœLTENÄ° -->
+                <!-- 3. HABER BÜLTENİ -->
                 <div class="taskbar-col">
-                    <div class="col-title"><i class="fas fa-envelope"></i><span data-i18n="newsletterTitle">Haber BÃ¼lteni</span></div>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" id="newsletterEmail" data-i18n-placeholder="emailPlaceholder" placeholder="E-posta adresiniz" required />
-                        <button type="submit" id="subscribeBtn"><i class="fas fa-paper-plane"></i> <span data-i18n="subscribeBtn">Abone Ol</span></button>
+
+                    <div class="col-title">
+                        <i class="fas fa-envelope"></i>
+
+                        <span data-i18n="newsletterTitle">
+                            Haber Bülteni
+                        </span>
+                    </div>
+
+                    <form
+                        class="newsletter-form"
+                        id="newsletterForm"
+                    >
+
+                        <input
+                            type="email"
+                            id="newsletterEmail"
+                            data-i18n-placeholder="emailPlaceholder"
+                            placeholder="E-posta adresiniz"
+                            required
+                        >
+
+                        <button
+                            type="submit"
+                            id="subscribeBtn"
+                        >
+                            <i class="fas fa-paper-plane"></i>
+
+                            <span data-i18n="subscribeBtn">
+                                Abone Ol
+                            </span>
+                        </button>
+
                     </form>
-                    <div class="newsletter-status" id="newsletterStatus"></div>
-                    <p style="font-size:0.7rem; color:var(--text-muted); margin-top:2px;">
-                        <i class="fas fa-lock"></i> <span data-i18n="newsletterNote">spam yok, kaliteli iÃ§erik</span>
+
+                    <div
+                        class="newsletter-status"
+                        id="newsletterStatus"
+                    ></div>
+
+                    <p
+                        style="
+                            font-size:0.7rem;
+                            color:var(--text-muted);
+                            margin-top:2px;
+                        "
+                    >
+                        <i class="fas fa-lock"></i>
+
+                        <span data-i18n="newsletterNote">
+                            Spam yok, kaliteli içerik
+                        </span>
                     </p>
+
                 </div>
+
             </div>
         </div>
     </footer>
 
     <!-- ========== JAVASCRIPT ========== -->
     <script>
-        (function() {
+        (function () {
             'use strict';
 
-            // ---------- ELEMANLAR ----------
-            const footer = document.getElementById('footerTaskbar');
-            const toggleBtn = document.getElementById('toggleBtn');
-            const body = document.body;
-            const searchInput = document.getElementById('searchInput');
-            const filterBtns = document.querySelectorAll('#filterButtons button');
-            const cards = document.querySelectorAll('.card');
-            const cardCount = document.getElementById('cardCount');
-            const newsletterForm = document.getElementById('newsletterForm');
-            const newsletterStatus = document.getElementById('newsletterStatus');
-            const progressBar = document.getElementById('progressBar');
-            const themeToggle = document.getElementById('themeToggle');
-            const themeIcon = document.getElementById('themeIcon');
-            const themeText = document.getElementById('themeText');
-            const toastContainer = document.getElementById('toastContainer');
+            /* ---------- ELEMANLAR ---------- */
 
-            // Dil butonlarÄ±
-            const langButtons = document.querySelectorAll('.lang-option');
+            const footer =
+                document.getElementById('footerTaskbar');
 
-            // ---------- 1. FOOTER AÃ‡/KAPA ----------
+            const toggleBtn =
+                document.getElementById('toggleBtn');
+
+            const body =
+                document.body;
+
+            const searchInput =
+                document.getElementById('searchInput');
+
+            const filterBtns =
+                document.querySelectorAll(
+                    '#filterButtons button'
+                );
+
+            const cards =
+                document.querySelectorAll('.card');
+
+            const cardCount =
+                document.getElementById('cardCount');
+
+            const newsletterForm =
+                document.getElementById('newsletterForm');
+
+            const newsletterStatus =
+                document.getElementById('newsletterStatus');
+
+            const progressBar =
+                document.getElementById('progressBar');
+
+            const themeToggle =
+                document.getElementById('themeToggle');
+
+            const themeIcon =
+                document.getElementById('themeIcon');
+
+            const themeText =
+                document.getElementById('themeText');
+
+            const toastContainer =
+                document.getElementById('toastContainer');
+
+            const langButtons =
+                document.querySelectorAll('.lang-option');
+
+
+            /* ---------- 1. FOOTER AÇ / KAPA ---------- */
+
             let isOpen = false;
+
             const toggleFooter = (open) => {
-                isOpen = (open !== undefined) ? open : !isOpen;
-                footer.classList.toggle('open', isOpen);
-                body.classList.toggle('footer-open', isOpen);
-                toggleBtn.setAttribute('aria-expanded', isOpen);
+
+                isOpen =
+                    open !== undefined
+                        ? open
+                        : !isOpen;
+
+                footer.classList.toggle(
+                    'open',
+                    isOpen
+                );
+
+                body.classList.toggle(
+                    'footer-open',
+                    isOpen
+                );
+
+                toggleBtn.setAttribute(
+                    'aria-expanded',
+                    String(isOpen)
+                );
             };
-            toggleBtn.addEventListener('click', (e) => { e.stopPropagation();
-                toggleFooter(); });
-            document.addEventListener('click', (e) => {
-                if (isOpen && !footer.contains(e.target)) toggleFooter(false);
-            });
 
-            // ---------- 2. OKUMA Ã‡UBUÄU ----------
-            window.addEventListener('scroll', () => {
-                const scrollTop = window.scrollY;
-                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-                progressBar.style.width = progress + '%';
-            });
+            toggleBtn.addEventListener(
+                'click',
+                (event) => {
+                    event.stopPropagation();
+                    toggleFooter();
+                }
+            );
 
-            // ---------- 3. TEMA ----------
-            let currentTheme = localStorage.getItem('theme') || 'light';
-            const applyTheme = (theme) => {
-                document.documentElement.setAttribute('data-theme', theme);
-                localStorage.setItem('theme', theme);
-                const isDark = theme === 'dark';
-                themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
-                const themeKey = isDark ? 'themeDark' : 'themeLight';
-                themeText.textContent = getTranslation(currentLang, themeKey);
-                const msg = isDark ? getTranslation(currentLang, 'toastDark') : getTranslation(currentLang, 'toastLight');
-                showToast(getTranslation(currentLang, 'toastTheme'), msg);
-            };
-            themeToggle.addEventListener('click', () => {
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                currentTheme = newTheme;
-                applyTheme(newTheme);
-            });
+            toggleBtn.addEventListener(
+                'keydown',
+                (event) => {
 
-            // ---------- 4. DÄ°L Ã‡EVÄ°RÄ°LERÄ° (KapsamlÄ±) ----------
+                    if (
+                        event.key === 'Enter' ||
+                        event.key === ' '
+                    ) {
+                        event.preventDefault();
+                        toggleFooter();
+                    }
+
+                }
+            );
+
+            document.addEventListener(
+                'click',
+                (event) => {
+
+                    if (
+                        isOpen &&
+                        !footer.contains(event.target)
+                    ) {
+                        toggleFooter(false);
+                    }
+
+                }
+            );
+
+
+            /* ---------- 2. OKUMA ÇUBUĞU ---------- */
+
+            window.addEventListener(
+                'scroll',
+                () => {
+
+                    const scrollTop =
+                        window.scrollY;
+
+                    const docHeight =
+                        document.documentElement.scrollHeight -
+                        window.innerHeight;
+
+                    const progress =
+                        docHeight > 0
+                            ? (scrollTop / docHeight) * 100
+                            : 0;
+
+                    progressBar.style.width =
+                        progress + '%';
+
+                },
+                { passive: true }
+            );
+
+
+            /* ---------- 3. ÇEVİRİLER ---------- */
+
             const translations = {
+
                 tr: {
-                    heroTitle: 'Merhaba, DÃ¼nya',
-                    heroDesc: 'Footer\'da dil seÃ§eneÄŸi ve geliÅŸmiÅŸ abone formu aktif!',
-                    contentTitle: 'Ä°Ã§erikler',
-                    card1Title: 'Yapay Zeka ile TasarÄ±m',
-                    card1Desc: 'Yeni nesil yapay zeka araÃ§larÄ±yla dijital Ã¼rÃ¼n tasarÄ±mÄ± nasÄ±l deÄŸiÅŸiyor?',
-                    card1Tag: 'Teknoloji',
-                    card2Title: 'SaÄŸlÄ±klÄ± YaÅŸam Trendleri',
-                    card2Desc: '2026\'da Ã¶ne Ã§Ä±kan saÄŸlÄ±k ve wellness trendlerini keÅŸfedin.',
-                    card2Tag: 'SaÄŸlÄ±k',
-                    card3Title: 'Dijital EÄŸitim DÃ¶nÃ¼ÅŸÃ¼mÃ¼',
-                    card3Desc: 'Uzaktan eÄŸitim ve interaktif Ã¶ÄŸrenme platformlarÄ±nÄ±n geleceÄŸi.',
-                    card3Tag: 'EÄŸitim',
-                    card4Title: 'Kuantum Bilgisayarlar',
-                    card4Desc: 'Kuantum iÅŸlemciler ve gÃ¼nlÃ¼k hayata etkileri Ã¼zerine bir bakÄ±ÅŸ.',
-                    card4Tag: 'Teknoloji',
-                    taskbarTitle: 'GÃ¶rev Ã‡ubuÄŸu',
-                    taskbarBadge: 'Ã‡ok Dilli',
-                    socialTitle: 'Sosyal',
-                    searchTitle: 'Ara ve Filtrele',
-                    searchPlaceholder: 'Kartlarda ara...',
-                    filterAll: 'TÃ¼mÃ¼',
-                    filterTech: 'Teknoloji',
-                    filterHealth: 'SaÄŸlÄ±k',
-                    filterEdu: 'EÄŸitim',
-                    newsletterTitle: 'Haber BÃ¼lteni',
-                    emailPlaceholder: 'E-posta adresiniz',
-                    subscribeBtn: 'Abone Ol',
-                    newsletterNote: 'spam yok, kaliteli iÃ§erik',
-                    themeDark: 'KaranlÄ±k',
-                    themeLight: 'AydÄ±nlÄ±k',
-                    toastTheme: 'Tema deÄŸiÅŸtirildi',
-                    toastDark: 'ğŸŒ™ KaranlÄ±k mod',
-                    toastLight: 'â˜€ï¸ AydÄ±nlÄ±k mod',
-                    toastSub: 'Abone Olundu!',
-                    toastSubMsg: ' adresi bÃ¼ltene eklendi.',
-                    toastLang: 'Dil deÄŸiÅŸtirildi',
-                    toastLangMsg: ' seÃ§ildi.',
-                    toastWelcome: 'HoÅŸ Geldiniz! ğŸ‘‹',
-                    toastWelcomeMsg: 'Footer\'daki yenilikleri keÅŸfedin.',
-                    emailInvalid: 'GeÃ§erli bir e-posta girin.',
-                    subscribed: 'OnaylandÄ±!',
+
+                    heroTitle:
+                        'Merhaba, Dünya',
+
+                    heroDesc:
+                        "Footer'da dil seçeneği ve gelişmiş abone formu aktif!",
+
+                    contentTitle:
+                        'İçerikler',
+
+                    card1Title:
+                        'Yapay Zeka ile Tasarım',
+
+                    card1Desc:
+                        'Yeni nesil yapay zeka araçlarıyla dijital ürün tasarımı nasıl değişiyor?',
+
+                    card1Tag:
+                        'Teknoloji',
+
+                    card2Title:
+                        'Sağlıklı Yaşam Trendleri',
+
+                    card2Desc:
+                        "2026'da öne çıkan sağlık ve wellness trendlerini keşfedin.",
+
+                    card2Tag:
+                        'Sağlık',
+
+                    card3Title:
+                        'Dijital Eğitim Dönüşümü',
+
+                    card3Desc:
+                        'Uzaktan eğitim ve interaktif öğrenme platformlarının geleceği.',
+
+                    card3Tag:
+                        'Eğitim',
+
+                    card4Title:
+                        'Kuantum Bilgisayarlar',
+
+                    card4Desc:
+                        'Kuantum işlemciler ve günlük hayata etkileri üzerine bir bakış.',
+
+                    card4Tag:
+                        'Teknoloji',
+
+                    taskbarTitle:
+                        'Görev Çubuğu',
+
+                    taskbarBadge:
+                        'Çok Dilli',
+
+                    socialTitle:
+                        'Sosyal',
+
+                    searchTitle:
+                        'Ara ve Filtrele',
+
+                    searchPlaceholder:
+                        'Kartlarda ara...',
+
+                    filterAll:
+                        'Tümü',
+
+                    filterTech:
+                        'Teknoloji',
+
+                    filterHealth:
+                        'Sağlık',
+
+                    filterEdu:
+                        'Eğitim',
+
+                    newsletterTitle:
+                        'Haber Bülteni',
+
+                    emailPlaceholder:
+                        'E-posta adresiniz',
+
+                    subscribeBtn:
+                        'Abone Ol',
+
+                    newsletterNote:
+                        'Spam yok, kaliteli içerik',
+
+                    themeDark:
+                        'Karanlık',
+
+                    themeLight:
+                        'Aydınlık',
+
+                    toastTheme:
+                        'Tema değiştirildi',
+
+                    toastDark:
+                        '🌙 Karanlık mod',
+
+                    toastLight:
+                        '☀️ Aydınlık mod',
+
+                    toastSub:
+                        'Abone Olundu!',
+
+                    toastSubMsg:
+                        ' adresi bültene eklendi.',
+
+                    toastLang:
+                        'Dil değiştirildi',
+
+                    toastLangMsg:
+                        ' seçildi.',
+
+                    toastWelcome:
+                        'Hoş Geldiniz! 👋',
+
+                    toastWelcomeMsg:
+                        "Footer'daki yenilikleri keşfedin.",
+
+                    emailInvalid:
+                        'Geçerli bir e-posta girin.',
+
+                    subscribed:
+                        'Onaylandı!'
                 },
+
+
                 en: {
-                    heroTitle: 'Hello, World',
-                    heroDesc: 'Language selector and advanced subscribe form active in the footer!',
-                    contentTitle: 'Contents',
-                    card1Title: 'Design with AI',
-                    card1Desc: 'How next-gen AI tools are changing digital product design?',
-                    card1Tag: 'Technology',
-                    card2Title: 'Healthy Living Trends',
-                    card2Desc: 'Discover the top health and wellness trends in 2026.',
-                    card2Tag: 'Health',
-                    card3Title: 'Digital Education Transformation',
-                    card3Desc: 'The future of distance learning and interactive platforms.',
-                    card3Tag: 'Education',
-                    card4Title: 'Quantum Computers',
-                    card4Desc: 'A look at quantum processors and their impact on daily life.',
-                    card4Tag: 'Technology',
-                    taskbarTitle: 'Taskbar',
-                    taskbarBadge: 'Multilingual',
-                    socialTitle: 'Social',
-                    searchTitle: 'Search & Filter',
-                    searchPlaceholder: 'Search cards...',
-                    filterAll: 'All',
-                    filterTech: 'Technology',
-                    filterHealth: 'Health',
-                    filterEdu: 'Education',
-                    newsletterTitle: 'Newsletter',
-                    emailPlaceholder: 'Your email address',
-                    subscribeBtn: 'Subscribe',
-                    newsletterNote: 'no spam, quality content',
-                    themeDark: 'Dark',
-                    themeLight: 'Light',
-                    toastTheme: 'Theme changed',
-                    toastDark: 'ğŸŒ™ Dark mode',
-                    toastLight: 'â˜€ï¸ Light mode',
-                    toastSub: 'Subscribed!',
-                    toastSubMsg: ' address added to the list.',
-                    toastLang: 'Language changed',
-                    toastLangMsg: ' selected.',
-                    toastWelcome: 'Welcome! ğŸ‘‹',
-                    toastWelcomeMsg: 'Discover the new features in the footer.',
-                    emailInvalid: 'Please enter a valid email.',
-                    subscribed: 'Confirmed!',
+
+                    heroTitle:
+                        'Hello, World',
+
+                    heroDesc:
+                        'Language selector and advanced subscribe form active in the footer!',
+
+                    contentTitle:
+                        'Contents',
+
+                    card1Title:
+                        'Design with AI',
+
+                    card1Desc:
+                        'How next-gen AI tools are changing digital product design?',
+
+                    card1Tag:
+                        'Technology',
+
+                    card2Title:
+                        'Healthy Living Trends',
+
+                    card2Desc:
+                        'Discover the top health and wellness trends in 2026.',
+
+                    card2Tag:
+                        'Health',
+
+                    card3Title:
+                        'Digital Education Transformation',
+
+                    card3Desc:
+                        'The future of distance learning and interactive platforms.',
+
+                    card3Tag:
+                        'Education',
+
+                    card4Title:
+                        'Quantum Computers',
+
+                    card4Desc:
+                        'A look at quantum processors and their impact on daily life.',
+
+                    card4Tag:
+                        'Technology',
+
+                    taskbarTitle:
+                        'Taskbar',
+
+                    taskbarBadge:
+                        'Multilingual',
+
+                    socialTitle:
+                        'Social',
+
+                    searchTitle:
+                        'Search & Filter',
+
+                    searchPlaceholder:
+                        'Search cards...',
+
+                    filterAll:
+                        'All',
+
+                    filterTech:
+                        'Technology',
+
+                    filterHealth:
+                        'Health',
+
+                    filterEdu:
+                        'Education',
+
+                    newsletterTitle:
+                        'Newsletter',
+
+                    emailPlaceholder:
+                        'Your email address',
+
+                    subscribeBtn:
+                        'Subscribe',
+
+                    newsletterNote:
+                        'No spam, quality content',
+
+                    themeDark:
+                        'Dark',
+
+                    themeLight:
+                        'Light',
+
+                    toastTheme:
+                        'Theme changed',
+
+                    toastDark:
+                        '🌙 Dark mode',
+
+                    toastLight:
+                        '☀️ Light mode',
+
+                    toastSub:
+                        'Subscribed!',
+
+                    toastSubMsg:
+                        ' address added to the list.',
+
+                    toastLang:
+                        'Language changed',
+
+                    toastLangMsg:
+                        ' selected.',
+
+                    toastWelcome:
+                        'Welcome! 👋',
+
+                    toastWelcomeMsg:
+                        'Discover the new features in the footer.',
+
+                    emailInvalid:
+                        'Please enter a valid email.',
+
+                    subscribed:
+                        'Confirmed!'
                 },
+
+
                 de: {
-                    heroTitle: 'Hallo, Welt',
-                    heroDesc: 'Sprachauswahl und erweitertes Abo-Formular im Footer aktiv!',
-                    contentTitle: 'Inhalte',
-                    card1Title: 'Design mit KI',
-                    card1Desc: 'Wie KI-Tools der nÃ¤chsten Generation das digitale Produktdesign verÃ¤ndern.',
-                    card1Tag: 'Technologie',
-                    card2Title: 'Trends fÃ¼r gesundes Leben',
-                    card2Desc: 'Entdecken Sie die wichtigsten Gesundheits- und Wellnesstrends 2026.',
-                    card2Tag: 'Gesundheit',
-                    card3Title: 'Digitale Bildungstransformation',
-                    card3Desc: 'Die Zukunft von Fernunterricht und interaktiven Plattformen.',
-                    card3Tag: 'Bildung',
-                    card4Title: 'Quantencomputer',
-                    card4Desc: 'Ein Blick auf Quantenprozessoren und ihre Auswirkungen auf den Alltag.',
-                    card4Tag: 'Technologie',
-                    taskbarTitle: 'Taskleiste',
-                    taskbarBadge: 'Mehrsprachig',
-                    socialTitle: 'Sozial',
-                    searchTitle: 'Suchen & Filtern',
-                    searchPlaceholder: 'Karten durchsuchen...',
-                    filterAll: 'Alle',
-                    filterTech: 'Technologie',
-                    filterHealth: 'Gesundheit',
-                    filterEdu: 'Bildung',
-                    newsletterTitle: 'Newsletter',
-                    emailPlaceholder: 'Ihre E-Mail-Adresse',
-                    subscribeBtn: 'Abonnieren',
-                    newsletterNote: 'kein Spam, QualitÃ¤tsinhalte',
-                    themeDark: 'Dunkel',
-                    themeLight: 'Hell',
-                    toastTheme: 'Thema geÃ¤ndert',
-                    toastDark: 'ğŸŒ™ Dunkler Modus',
-                    toastLight: 'â˜€ï¸ Heller Modus',
-                    toastSub: 'Abonniert!',
-                    toastSubMsg: ' Adresse zur Liste hinzugefÃ¼gt.',
-                    toastLang: 'Sprache geÃ¤ndert',
-                    toastLangMsg: ' ausgewÃ¤hlt.',
-                    toastWelcome: 'Willkommen! ğŸ‘‹',
-                    toastWelcomeMsg: 'Entdecken Sie die neuen Funktionen in der FuÃŸzeile.',
-                    emailInvalid: 'Bitte geben Sie eine gÃ¼ltige E-Mail ein.',
-                    subscribed: 'BestÃ¤tigt!',
+
+                    heroTitle:
+                        'Hallo, Welt',
+
+                    heroDesc:
+                        'Sprachauswahl und erweitertes Abo-Formular im Footer aktiv!',
+
+                    contentTitle:
+                        'Inhalte',
+
+                    card1Title:
+                        'Design mit KI',
+
+                    card1Desc:
+                        'Wie KI-Tools der nächsten Generation das digitale Produktdesign verändern.',
+
+                    card1Tag:
+                        'Technologie',
+
+                    card2Title:
+                        'Trends für gesundes Leben',
+
+                    card2Desc:
+                        'Entdecken Sie die wichtigsten Gesundheits- und Wellnesstrends 2026.',
+
+                    card2Tag:
+                        'Gesundheit',
+
+                    card3Title:
+                        'Digitale Bildungstransformation',
+
+                    card3Desc:
+                        'Die Zukunft von Fernunterricht und interaktiven Plattformen.',
+
+                    card3Tag:
+                        'Bildung',
+
+                    card4Title:
+                        'Quantencomputer',
+
+                    card4Desc:
+                        'Ein Blick auf Quantenprozessoren und ihre Auswirkungen auf den Alltag.',
+
+                    card4Tag:
+                        'Technologie',
+
+                    taskbarTitle:
+                        'Taskleiste',
+
+                    taskbarBadge:
+                        'Mehrsprachig',
+
+                    socialTitle:
+                        'Sozial',
+
+                    searchTitle:
+                        'Suchen & Filtern',
+
+                    searchPlaceholder:
+                        'Karten durchsuchen...',
+
+                    filterAll:
+                        'Alle',
+
+                    filterTech:
+                        'Technologie',
+
+                    filterHealth:
+                        'Gesundheit',
+
+                    filterEdu:
+                        'Bildung',
+
+                    newsletterTitle:
+                        'Newsletter',
+
+                    emailPlaceholder:
+                        'Ihre E-Mail-Adresse',
+
+                    subscribeBtn:
+                        'Abonnieren',
+
+                    newsletterNote:
+                        'Kein Spam, Qualitätsinhalte',
+
+                    themeDark:
+                        'Dunkel',
+
+                    themeLight:
+                        'Hell',
+
+                    toastTheme:
+                        'Thema geändert',
+
+                    toastDark:
+                        '🌙 Dunkler Modus',
+
+                    toastLight:
+                        '☀️ Heller Modus',
+
+                    toastSub:
+                        'Abonniert!',
+
+                    toastSubMsg:
+                        ' Adresse zur Liste hinzugefügt.',
+
+                    toastLang:
+                        'Sprache geändert',
+
+                    toastLangMsg:
+                        ' ausgewählt.',
+
+                    toastWelcome:
+                        'Willkommen! 👋',
+
+                    toastWelcomeMsg:
+                        'Entdecken Sie die neuen Funktionen in der Fußzeile.',
+
+                    emailInvalid:
+                        'Bitte geben Sie eine gültige E-Mail ein.',
+
+                    subscribed:
+                        'Bestätigt!'
                 },
+
+
                 fr: {
-                    heroTitle: 'Bonjour, Monde',
-                    heroDesc: 'SÃ©lecteur de langue et formulaire d\'abonnement avancÃ© actifs dans le pied de page !',
-                    contentTitle: 'Contenus',
-                    card1Title: 'Design avec IA',
-                    card1Desc: 'Comment les outils d\'IA de nouvelle gÃ©nÃ©ration changent-ils le design produit numÃ©rique ?',
-                    card1Tag: 'Technologie',
-                    card2Title: 'Tendances santÃ©',
-                    card2Desc: 'DÃ©couvrez les principales tendances santÃ© et bien-Ãªtre en 2026.',
-                    card2Tag: 'SantÃ©',
-                    card3Title: 'Transformation numÃ©rique de l\'Ã©ducation',
-                    card3Desc: 'L\'avenir de l\'apprentissage Ã  distance et des plateformes interactives.',
-                    card3Tag: 'Ã‰ducation',
-                    card4Title: 'Ordinateurs quantiques',
-                    card4Desc: 'Un aperÃ§u des processeurs quantiques et de leur impact sur la vie quotidienne.',
-                    card4Tag: 'Technologie',
-                    taskbarTitle: 'Barre des tÃ¢ches',
-                    taskbarBadge: 'Multilingue',
-                    socialTitle: 'Social',
-                    searchTitle: 'Recherche & Filtre',
-                    searchPlaceholder: 'Rechercher des cartes...',
-                    filterAll: 'Tout',
-                    filterTech: 'Technologie',
-                    filterHealth: 'SantÃ©',
-                    filterEdu: 'Ã‰ducation',
-                    newsletterTitle: 'Bulletin',
-                    emailPlaceholder: 'Votre adresse e-mail',
-                    subscribeBtn: 'S\'abonner',
-                    newsletterNote: 'pas de spam, contenu de qualitÃ©',
-                    themeDark: 'Sombre',
-                    themeLight: 'Clair',
-                    toastTheme: 'ThÃ¨me changÃ©',
-                    toastDark: 'ğŸŒ™ Mode sombre',
-                    toastLight: 'â˜€ï¸ Mode clair',
-                    toastSub: 'AbonnÃ© !',
-                    toastSubMsg: ' adresse ajoutÃ©e Ã  la liste.',
-                    toastLang: 'Langue changÃ©e',
-                    toastLangMsg: ' sÃ©lectionnÃ©e.',
-                    toastWelcome: 'Bienvenue ! ğŸ‘‹',
-                    toastWelcomeMsg: 'DÃ©couvrez les nouvelles fonctionnalitÃ©s dans le pied de page.',
-                    emailInvalid: 'Veuillez entrer un email valide.',
-                    subscribed: 'ConfirmÃ© !',
+
+                    heroTitle:
+                        'Bonjour, Monde',
+
+                    heroDesc:
+                        "Sélecteur de langue et formulaire d'abonnement avancé actifs dans le pied de page !",
+
+                    contentTitle:
+                        'Contenus',
+
+                    card1Title:
+                        'Design avec IA',
+
+                    card1Desc:
+                        "Comment les outils d'IA de nouvelle génération changent-ils le design produit numérique ?",
+
+                    card1Tag:
+                        'Technologie',
+
+                    card2Title:
+                        'Tendances santé',
+
+                    card2Desc:
+                        'Découvrez les principales tendances santé et bien-être en 2026.',
+
+                    card2Tag:
+                        'Santé',
+
+                    card3Title:
+                        "Transformation numérique de l'éducation",
+
+                    card3Desc:
+                        "L'avenir de l'apprentissage à distance et des plateformes interactives.",
+
+                    card3Tag:
+                        'Éducation',
+
+                    card4Title:
+                        'Ordinateurs quantiques',
+
+                    card4Desc:
+                        'Un aperçu des processeurs quantiques et de leur impact sur la vie quotidienne.',
+
+                    card4Tag:
+                        'Technologie',
+
+                    taskbarTitle:
+                        'Barre des tâches',
+
+                    taskbarBadge:
+                        'Multilingue',
+
+                    socialTitle:
+                        'Social',
+
+                    searchTitle:
+                        'Recherche & Filtre',
+
+                    searchPlaceholder:
+                        'Rechercher des cartes...',
+
+                    filterAll:
+                        'Tout',
+
+                    filterTech:
+                        'Technologie',
+
+                    filterHealth:
+                        'Santé',
+
+                    filterEdu:
+                        'Éducation',
+
+                    newsletterTitle:
+                        'Bulletin',
+
+                    emailPlaceholder:
+                        'Votre adresse e-mail',
+
+                    subscribeBtn:
+                        "S'abonner",
+
+                    newsletterNote:
+                        'Pas de spam, contenu de qualité',
+
+                    themeDark:
+                        'Sombre',
+
+                    themeLight:
+                        'Clair',
+
+                    toastTheme:
+                        'Thème changé',
+
+                    toastDark:
+                        '🌙 Mode sombre',
+
+                    toastLight:
+                        '☀️ Mode clair',
+
+                    toastSub:
+                        'Abonné !',
+
+                    toastSubMsg:
+                        ' adresse ajoutée à la liste.',
+
+                    toastLang:
+                        'Langue changée',
+
+                    toastLangMsg:
+                        ' sélectionnée.',
+
+                    toastWelcome:
+                        'Bienvenue ! 👋',
+
+                    toastWelcomeMsg:
+                        'Découvrez les nouvelles fonctionnalités dans le pied de page.',
+
+                    emailInvalid:
+                        'Veuillez entrer un email valide.',
+
+                    subscribed:
+                        'Confirmé !'
                 }
             };
 
-            let currentLang = localStorage.getItem('preferredLanguage') || 'tr';
 
-            function getTranslation(lang, key) {
-                return translations[lang]?.[key] || translations.tr[key] || key;
-            }
+            /* ---------- 4. DİL ---------- */
 
-            // ---------- 5. DÄ°L UYGULAMA ----------
-            function applyLanguage(lang) {
-                currentLang = lang;
-                localStorage.setItem('preferredLanguage', lang);
+            let currentLang =
+                localStorage.getItem(
+                    'preferredLanguage'
+                ) || 'tr';
 
-                // TÃ¼m data-i18n elementlerini gÃ¼ncelle
-                document.querySelectorAll('[data-i18n]').forEach(el => {
-                    const key = el.getAttribute('data-i18n');
-                    const text = getTranslation(lang, key);
-                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                        el.placeholder = text;
-                    } else {
-                        el.textContent = text;
-                    }
-                });
 
-                // Placeholder'lar iÃ§in ayrÄ±ca (data-i18n-placeholder)
-                document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-                    const key = el.getAttribute('data-i18n-placeholder');
-                    el.placeholder = getTranslation(lang, key);
-                });
-
-                // Filtre butonlarÄ± (data-i18n ile iÅŸaretli)
-                filterBtns.forEach(btn => {
-                    const key = btn.getAttribute('data-i18n');
-                    if (key) btn.textContent = getTranslation(lang, key);
-                });
-
-                // Tema butonu metni
-                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                themeText.textContent = isDark ? getTranslation(lang, 'themeDark') : getTranslation(lang, 'themeLight');
-
-                // Dil butonlarÄ±nÄ± gÃ¼ncelle (aktif sÄ±nÄ±fÄ±)
-                langButtons.forEach(btn => {
-                    btn.classList.toggle('active', btn.dataset.lang === lang);
-                });
-
-                // Kart sayÄ±sÄ±nÄ± gÃ¼ncelle (statik metin)
-                const visibleCount = document.querySelectorAll('.card[style*="display: flex"]').length;
-                cardCount.textContent = visibleCount + ' ' + getTranslation(lang, 'contentTitle').toLowerCase();
-
-                // Toast bildirimi
-                showToast(
-                    getTranslation(lang, 'toastLang'),
-                    `${getTranslation(lang, 'toastLangMsg')} ${lang.toUpperCase()}`
+            function getTranslation(
+                lang,
+                key
+            ) {
+                return (
+                    translations[lang]?.[key] ||
+                    translations.tr[key] ||
+                    key
                 );
             }
 
-            // ---------- 6. DÄ°L BUTONLARI ----------
-            langButtons.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const lang = this.dataset.lang;
-                    if (lang !== currentLang) {
-                        applyLanguage(lang);
-                    }
-                });
-            });
 
-            // BaÅŸlangÄ±Ã§ta dili uygula
-            applyLanguage(currentLang);
+            function applyLanguage(
+                lang,
+                showNotification = true
+            ) {
 
-            // ---------- 7. TOAST ----------
-            function showToast(title, message, icon = 'fa-solid fa-circle-check') {
-                const toast = document.createElement('div');
-                toast.className = 'toast';
-                toast.innerHTML = `
-                    <i class="${icon}"></i>
-                    <div>
-                        <strong style="display:block; font-size:0.9rem;">${title}</strong>
-                        <span style="font-size:0.8rem; color:var(--text-secondary);">${message}</span>
-                    </div>
-                    <button class="toast-close"><i class="fas fa-xmark"></i></button>
-                `;
-                toastContainer.appendChild(toast);
-                requestAnimationFrame(() => toast.classList.add('show'));
-                toast.querySelector('.toast-close').addEventListener('click', () => {
-                    toast.classList.remove('show');
-                    setTimeout(() => toast.remove(), 500);
-                });
-                setTimeout(() => {
-                    if (toast.parentNode) {
-                        toast.classList.remove('show');
-                        setTimeout(() => toast.remove(), 500);
-                    }
-                }, 5000);
-            }
-
-            // ---------- 8. ARAMA & FÄ°LTRE ----------
-            function filterCards() {
-                const query = searchInput.value.toLowerCase().trim();
-                const activeFilter = document.querySelector('#filterButtons button.active');
-                const filterTag = activeFilter ? activeFilter.dataset.filter : 'all';
-                let visible = 0;
-                cards.forEach(card => {
-                    const text = card.textContent.toLowerCase();
-                    const tag = card.dataset.tag || '';
-                    const match = text.includes(query) && (filterTag === 'all' || tag === filterTag);
-                    card.style.display = match ? 'flex' : 'none';
-                    if (match) visible++;
-                });
-                const lang = currentLang;
-                cardCount.textContent = visible + ' ' + getTranslation(lang, 'contentTitle').toLowerCase();
-            }
-
-            searchInput.addEventListener('input', filterCards);
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    filterCards();
-                });
-            });
-
-            // ---------- 9. NEWSLETTER ----------
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const email = this.querySelector('input[type="email"]').value.trim();
-                if (!email || !email.includes('@') || !email.includes('.')) {
-                    newsletterStatus.textContent = 'âš ï¸ ' + getTranslation(currentLang, 'emailInvalid');
-                    newsletterStatus.style.color = '#dc2626';
-                    return;
+                if (!translations[lang]) {
+                    lang = 'tr';
                 }
-                newsletterStatus.textContent = 'âœ… ' + getTranslation(currentLang, 'subscribed');
-                newsletterStatus.style.color = '#16a34a';
-                const lang = currentLang;
-                showToast(
-                    getTranslation(lang, 'toastSub'),
-                    `${email} ${getTranslation(lang, 'toastSubMsg')}`,
-                    'fa-regular fa-envelope'
-                );
-                this.querySelector('input[type="email"]').value = '';
-                setTimeout(() => { newsletterStatus.textContent = ''; }, 4000);
-            });
 
-            // ---------- 10. BAÅLANGIÃ‡ ----------
-            filterCards();
-            if (!localStorage.getItem('welcomeToastShown')) {
-                setTimeout(() => {
-                    const lang = currentLang;
+                currentLang = lang;
+
+                localStorage.setItem(
+                    'preferredLanguage',
+                    lang
+                );
+
+
+                /* data-i18n */
+
+                document
+                    .querySelectorAll('[data-i18n]')
+                    .forEach((el) => {
+
+                        const key =
+                            el.getAttribute(
+                                'data-i18n'
+                            );
+
+                        const text =
+                            getTranslation(
+                                lang,
+                                key
+                            );
+
+                        el.textContent = text;
+
+                    });
+
+
+                /* Placeholder */
+
+                document
+                    .querySelectorAll(
+                        '[data-i18n-placeholder]'
+                    )
+                    .forEach((el) => {
+
+                        const key =
+                            el.getAttribute(
+                                'data-i18n-placeholder'
+                            );
+
+                        el.placeholder =
+                            getTranslation(
+                                lang,
+                                key
+                            );
+
+                    });
+
+
+                /* Tema */
+
+                const isDark =
+                    document.documentElement
+                        .getAttribute('data-theme') === 'dark';
+
+                themeText.textContent =
+                    isDark
+                        ? getTranslation(
+                            lang,
+                            'themeDark'
+                        )
+                        : getTranslation(
+                            lang,
+                            'themeLight'
+                        );
+
+
+                /* Dil butonları */
+
+                langButtons.forEach(
+                    (btn) => {
+
+                        btn.classList.toggle(
+                            'active',
+                            btn.dataset.lang === lang
+                        );
+
+                    }
+                );
+
+
+                /* Kart sayısı */
+
+                updateCardCount();
+
+
+                /* Bildirim */
+
+                if (showNotification) {
+
                     showToast(
-                        getTranslation(lang, 'toastWelcome'),
-                        getTranslation(lang, 'toastWelcomeMsg'),
-                        'fa-regular fa-face-smile'
+                        getTranslation(
+                            lang,
+                            'toastLang'
+                        ),
+                        `${getTranslation(
+                            lang,
+                            'toastLangMsg'
+                        )} ${lang.toUpperCase()}`,
+                        'fa-solid fa-language'
                     );
-                    localStorage.setItem('welcomeToastShown', 'true');
-                }, 800);
+
+                }
+            }
+
+
+            /* ---------- 5. DİL BUTONLARI ---------- */
+
+            langButtons.forEach(
+                (btn) => {
+
+                    btn.addEventListener(
+                        'click',
+                        function () {
+
+                            const lang =
+                                this.dataset.lang;
+
+                            if (
+                                lang !== currentLang
+                            ) {
+                                applyLanguage(lang);
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+
+            /* ---------- 6. TOAST ---------- */
+
+            function showToast(
+                title,
+                message,
+                icon = 'fa-solid fa-circle-check'
+            ) {
+
+                const toast =
+                    document.createElement('div');
+
+                toast.className = 'toast';
+
+
+                /* innerHTML yerine güvenli DOM yapısı */
+
+                const iconElement =
+                    document.createElement('i');
+
+                iconElement.className = icon;
+
+
+                const content =
+                    document.createElement('div');
+
+
+                const titleElement =
+                    document.createElement('strong');
+
+                titleElement.textContent = title;
+
+                titleElement.style.display = 'block';
+                titleElement.style.fontSize = '0.9rem';
+
+
+                const messageElement =
+                    document.createElement('span');
+
+                messageElement.textContent = message;
+
+                messageElement.style.fontSize = '0.8rem';
+                messageElement.style.color =
+                    'var(--text-secondary)';
+
+
+                content.appendChild(titleElement);
+                content.appendChild(messageElement);
+
+
+                const closeButton =
+                    document.createElement('button');
+
+                closeButton.className =
+                    'toast-close';
+
+                closeButton.type = 'button';
+
+                closeButton.setAttribute(
+                    'aria-label',
+                    'Close'
+                );
+
+
+                const closeIcon =
+                    document.createElement('i');
+
+                closeIcon.className =
+                    'fas fa-xmark';
+
+
+                closeButton.appendChild(
+                    closeIcon
+                );
+
+
+                toast.appendChild(
+                    iconElement
+                );
+
+                toast.appendChild(
+                    content
+                );
+
+                toast.appendChild(
+                    closeButton
+                );
+
+
+                toastContainer.appendChild(
+                    toast
+                );
+
+
+                requestAnimationFrame(
+                    () => {
+                        toast.classList.add('show');
+                    }
+                );
+
+
+                const removeToast =
+                    () => {
+
+                        if (!toast.parentNode) {
+                            return;
+                        }
+
+                        toast.classList.remove(
+                            'show'
+                        );
+
+                        setTimeout(
+                            () => {
+
+                                if (
+                                    toast.parentNode
+                                ) {
+                                    toast.remove();
+                                }
+
+                            },
+                            500
+                        );
+
+                    };
+
+
+                closeButton.addEventListener(
+                    'click',
+                    removeToast
+                );
+
+
+                setTimeout(
+                    removeToast,
+                    5000
+                );
+            }
+
+
+            /* ---------- 7. TEMA ---------- */
+
+            let currentTheme =
+                localStorage.getItem(
+                    'theme'
+                ) || 'light';
+
+
+            function applyTheme(
+                theme,
+                showNotification = true
+            ) {
+
+                document.documentElement
+                    .setAttribute(
+                        'data-theme',
+                        theme
+                    );
+
+                localStorage.setItem(
+                    'theme',
+                    theme
+                );
+
+
+                currentTheme = theme;
+
+
+                const isDark =
+                    theme === 'dark';
+
+
+                themeIcon.className =
+                    isDark
+                        ? 'fas fa-sun'
+                        : 'fas fa-moon';
+
+
+                themeText.textContent =
+                    isDark
+                        ? getTranslation(
+                            currentLang,
+                            'themeDark'
+                        )
+                        : getTranslation(
+                            currentLang,
+                            'themeLight'
+                        );
+
+
+                if (showNotification) {
+
+                    showToast(
+                        getTranslation(
+                            currentLang,
+                            'toastTheme'
+                        ),
+                        isDark
+                            ? getTranslation(
+                                currentLang,
+                                'toastDark'
+                            )
+                            : getTranslation(
+                                currentLang,
+                                'toastLight'
+                            ),
+                        isDark
+                            ? 'fas fa-moon'
+                            : 'fas fa-sun'
+                    );
+
+                }
+            }
+
+
+            themeToggle.addEventListener(
+                'click',
+                () => {
+
+                    const newTheme =
+                        currentTheme === 'light'
+                            ? 'dark'
+                            : 'light';
+
+                    applyTheme(
+                        newTheme
+                    );
+
+                }
+            );
+
+
+            /* ---------- 8. ARAMA & FİLTRE ---------- */
+
+            function filterCards() {
+
+                const query =
+                    searchInput.value
+                        .toLocaleLowerCase(
+                            currentLang
+                        )
+                        .trim();
+
+
+                const activeFilter =
+                    document.querySelector(
+                        '#filterButtons button.active'
+                    );
+
+
+                const filterTag =
+                    activeFilter
+                        ? activeFilter.dataset.filter
+                        : 'all';
+
+
+                let visible = 0;
+
+
+                cards.forEach(
+                    (card) => {
+
+                        const text =
+                            card.textContent
+                                .toLocaleLowerCase(
+                                    currentLang
+                                );
+
+                        const tag =
+                            card.dataset.tag || '';
+
+
+                        const matchesSearch =
+                            text.includes(query);
+
+
+                        const matchesFilter =
+                            filterTag === 'all' ||
+                            tag === filterTag;
+
+
+                        const visibleCard =
+                            matchesSearch &&
+                            matchesFilter;
+
+
+                        card.style.display =
+                            visibleCard
+                                ? 'flex'
+                                : 'none';
+
+
+                        if (visibleCard) {
+                            visible++;
+                        }
+
+                    }
+                );
+
+
+                updateCardCount(
+                    visible
+                );
+            }
+
+
+            function updateCardCount(
+                forcedCount = null
+            ) {
+
+                let visibleCount;
+
+
+                if (
+                    forcedCount !== null
+                ) {
+
+                    visibleCount =
+                        forcedCount;
+
+                } else {
+
+                    visibleCount =
+                        Array.from(cards)
+                            .filter(
+                                (card) =>
+                                    card.style.display !== 'none'
+                            )
+                            .length;
+
+                }
+
+
+                const label =
+                    getTranslation(
+                        currentLang,
+                        'contentTitle'
+                    ).toLocaleLowerCase(
+                        currentLang
+                    );
+
+
+                cardCount.textContent =
+                    `${visibleCount} ${label}`;
+            }
+
+
+            searchInput.addEventListener(
+                'input',
+                filterCards
+            );
+
+
+            filterBtns.forEach(
+                (btn) => {
+
+                    btn.addEventListener(
+                        'click',
+                        function () {
+
+                            filterBtns.forEach(
+                                (button) => {
+                                    button.classList.remove(
+                                        'active'
+                                    );
+                                }
+                            );
+
+
+                            this.classList.add(
+                                'active'
+                            );
+
+
+                            filterCards();
+
+                        }
+                    );
+
+                }
+            );
+
+
+            /* ---------- 9. NEWSLETTER ---------- */
+
+            newsletterForm.addEventListener(
+                'submit',
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    const email =
+                        document
+                            .getElementById(
+                                'newsletterEmail'
+                            )
+                            .value
+                            .trim();
+
+
+                    const emailRegex =
+                        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+                    if (
+                        !emailRegex.test(email)
+                    ) {
+
+                        newsletterStatus.textContent =
+                            '⚠️ ' +
+                            getTranslation(
+                                currentLang,
+                                'emailInvalid'
+                            );
+
+                        newsletterStatus.style.color =
+                            '#dc2626';
+
+                        return;
+                    }
+
+
+                    newsletterStatus.textContent =
+                        '✅ ' +
+                        getTranslation(
+                            currentLang,
+                            'subscribed'
+                        );
+
+                    newsletterStatus.style.color =
+                        '#16a34a';
+
+
+                    showToast(
+                        getTranslation(
+                            currentLang,
+                            'toastSub'
+                        ),
+                        `${email}${getTranslation(
+                            currentLang,
+                            'toastSubMsg'
+                        )}`,
+                        'fa-regular fa-envelope'
+                    );
+
+
+                    this
+                        .querySelector(
+                            'input[type="email"]'
+                        )
+                        .value = '';
+
+
+                    setTimeout(
+                        () => {
+                            newsletterStatus.textContent =
+                                '';
+                        },
+                        4000
+                    );
+
+                }
+            );
+
+
+            /* ---------- 10. BAŞLANGIÇ ---------- */
+
+            applyTheme(
+                currentTheme,
+                false
+            );
+
+
+            applyLanguage(
+                currentLang,
+                false
+            );
+
+
+            filterCards();
+
+
+            /* Hoş geldiniz bildirimi */
+
+            if (
+                !localStorage.getItem(
+                    'welcomeToastShown'
+                )
+            ) {
+
+                setTimeout(
+                    () => {
+
+                        showToast(
+                            getTranslation(
+                                currentLang,
+                                'toastWelcome'
+                            ),
+                            getTranslation(
+                                currentLang,
+                                'toastWelcomeMsg'
+                            ),
+                            'fa-regular fa-face-smile'
+                        );
+
+
+                        localStorage.setItem(
+                            'welcomeToastShown',
+                            'true'
+                        );
+
+                    },
+                    800
+                );
+
             }
 
         })();
@@ -1089,3 +2405,4 @@
 
 </body>
 </html>
+```
